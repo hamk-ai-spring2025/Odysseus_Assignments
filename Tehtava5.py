@@ -5,9 +5,9 @@ from openai import OpenAI
 from PIL import Image
 from io import BytesIO
 
-client = OpenAI()  # käyttää ympäristömuuttujaa OPENAI_API_KEY automaattisesti
+client = OpenAI()  #OPENAI_API_KEY
 
-# Käyttäjän syöttämä kuvatiedosto
+# Kuvatiedosto
 image_path = sys.argv[1] if len(sys.argv) > 1 else "drawing1.png"
 
 # Muunna kuva base64-muotoon
@@ -36,7 +36,7 @@ description = vision_response.choices[0].message.content
 print("📝 Kuvaus kuvasta:\n")
 print(description)
 
-# 2. Generoi kuva (text → image)
+# Text to  image
 image_response = client.images.generate(
     model="dall-e-3",
     prompt=description,
@@ -45,7 +45,7 @@ image_response = client.images.generate(
     response_format="b64_json",
 )
 
-# 3. Tallenna generoitu kuva
+# 3. Tallenna kuva
 image_b64 = image_response.data[0].b64_json
 image_data = base64.b64decode(image_b64)
 image = Image.open(BytesIO(image_data))

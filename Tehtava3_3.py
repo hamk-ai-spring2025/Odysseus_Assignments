@@ -18,10 +18,10 @@ def generate_creative_content(prompt, num_versions=3):
                     {"role": "system", "content": "You are a creative writer specializing in marketing materials, memes, song lyrics, poems, and SEO-optimized blog posts. Use as many synonyms as possible to enhance search engine optimization."},
                     {"role": "user", "content": prompt}
                 ],
-                temperature=0.85,
+                temperature=0.55,
                 top_p=0.9,
-                presence_penalty=0.6,
-                frequency_penalty=0.4
+                presence_penalty=0.5,
+                frequency_penalty=0.5
             )
             responses.append(response.choices[0].message.content)
         return responses
