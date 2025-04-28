@@ -14,7 +14,7 @@ import sys # Import sys to check platform
 
 # Configuration
 fs = 44100  # Sample rate
-duration = 5 # seconds per recording segment
+duration = 10 # seconds per recording segment
 
 # Create a temporary file for recording
 # Using tempfile ensures a unique name and handles cleanup robustly
