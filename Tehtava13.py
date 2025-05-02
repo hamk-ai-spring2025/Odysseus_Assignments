@@ -47,7 +47,7 @@ if st.button("Generate Image") and prompt and replicate_token:
         for index, image_url in enumerate(output):
             img_data = requests.get(image_url).content
             img = Image.open(BytesIO(img_data))
-            st.image(img, caption="Generated Image", use_column_width=True)
+            st.image(img, caption="Generated Image", use_container_width=True)
 
             img_bytes = BytesIO()
             img.save(img_bytes, format='PNG')
