@@ -1,3 +1,5 @@
+#prompt Generate a code for a modern-style web interface as a Python code where an user can create an image using the Stable Diffusion AI image generator API. The user should have possibilities to define both a prompt and also a negative prompt. User should also have a possibility to define a ratio of the image. There should be a button where the user can download the created image. The code should use a real Stable Diffusion API. The Stable Diffusion API Key should be asked from the user on the web interface. The API key should not be hard coded in the code. The Python code should be supported to be run on Streamlit.
+
 import streamlit as st
 import requests
 from PIL import Image
